@@ -47,9 +47,9 @@ function BookNewForm(){
 
     return(
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Book</label>
+                    <label htmlFor="inputBook3">Book</label>
                     <div>
                         <input
                             type="text"
@@ -70,7 +70,7 @@ function BookNewForm(){
                             type="text"
                             className=""
                             id="author"
-                            value={author.book}
+                            value={book.author}
                             placeholder="Author's Name"
                             onChange={handleTextChange}
                             required
@@ -85,7 +85,7 @@ function BookNewForm(){
                             type="text"
                             className=""
                             id="book-cover"
-                            value={image.book} 
+                            value={book.image} 
                             placeholder="Book Cover URL"
                             onChange={handleTextChange}
                             />
@@ -99,7 +99,7 @@ function BookNewForm(){
                             type="text"
                             className=""
                             id="genre"
-                            value={genre.book}
+                            value={book.genre}
                             placeholder="Choose Book Genre"
                             onChange={handleTextChange}
                             />
@@ -163,10 +163,6 @@ function BookNewForm(){
         </div>
     )
 
-
-
-
-
-
-
 }
+
+export default BookNewForm;

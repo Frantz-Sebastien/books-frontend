@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Book from "./Book.js"
+import Book from "./Book"
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -11,10 +11,9 @@ function Books() {
     useEffect(() =>{
         axios
             .get(`${API}/books`)
-            .then((response) => {setBooks(response.data)
+            .then((response) => {setBooks(response.data)})
             .catch((error) => console.warn("Error fetching books:", error))    
 
-            })
     }, [])
 
     return(

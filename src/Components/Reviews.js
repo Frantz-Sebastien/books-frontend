@@ -12,7 +12,7 @@ function Reviews() {
 
   const handleAdd = (newReview) => {
     axios
-      .post(`${API}/cities/${id}/Reviews`, newReview)
+      .post(`${API}/books/${id}/reviews`, newReview)
       .then((response) => {
         setReviews([response.data, ...reviews]);
       })
@@ -21,7 +21,7 @@ function Reviews() {
 
   const handleDelete = (reviewId) => {
     axios
-      .delete(`${API}/cities/${id}/reviews/${reviewId}`)
+      .delete(`${API}/books/${id}/reviews/${reviewId}`)
       .then((response) => {
         const copyReviewArray = [...reviews];
         const indexDeletedReview = copyReviewArray.findIndex((review) => {
@@ -35,7 +35,7 @@ function Reviews() {
 
   const handleEdit = (updatedReview) => {
     axios
-      .put(`${API}/cities/${id}/reviews/${updatedReview.id}`, updatedReview)
+      .put(`${API}/books/${id}/reviews/${updatedReview.id}`, updatedReview)
       .then((response) => {
         const copyReviewArray = [...reviews];
         const indexUpdatedReview = copyReviewArray.findIndex((review) => {
@@ -48,7 +48,7 @@ function Reviews() {
   };
 
   useEffect(() => {
-    axios.get(`${API}/cities/${id}/reviews`).then((response) => {
+    axios.get(`${API}/books/${id}/reviews`).then((response) => {
       if (Array.isArray(response.data)) {
         setReviews(response.data);
       } else {
@@ -67,7 +67,7 @@ function Reviews() {
       {reviews && reviews.map((review) => (
         <Review
           key={review.id}
-          Review={review}
+          review={review}
           handleSubmit={handleEdit}
           handleDelete={handleDelete}
         />

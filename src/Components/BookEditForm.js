@@ -13,9 +13,9 @@ function BookEditForm(){
         author: "",
         image: "",
         genre: "",
-        release_year: null,
+        release_year: 0,
         has_read: false,
-        pages: null,
+        pages: 0,
         favorite: false,
     })
 
@@ -23,7 +23,9 @@ function BookEditForm(){
         axios
             .put(`${API}/books/${id}`, updatedBook)
             .then(
-                () => {navigate(`/books/${id}`)},
+                () => {
+                    navigate(`/books/${id}`)
+                },
                 (error) => console.error(error)
             )
             .catch((error) => {
@@ -57,9 +59,9 @@ function BookEditForm(){
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <label></label>
+                    <label htmlFor="book"></label>
                     <input
                         type="text"
                         value={book.book}
@@ -72,7 +74,7 @@ function BookEditForm(){
                 </div>
 
                 <div>
-                    <label></label>
+                    <label htmlFor="author"></label>
                     <input
                         type="text"
                         value={book.author}
@@ -85,19 +87,19 @@ function BookEditForm(){
                 </div>
 
                 <div>
-                    <label></label>
+                    <label htmlFor="image"></label>
                     <input
                         type="text"
                         value={book.image}
                         className=""
-                        id="cover-image"
+                        id="book-cover"
                         onChange={handleTextChange}
                         placeholder="Add a Book Cover Image"
                         />
                 </div>
 
                 <div>
-                    <label></label>
+                    <label htmlFor="genre"></label>
                     <input
                         type="text"
                         value={book.genre}
@@ -109,7 +111,7 @@ function BookEditForm(){
                 </div>
 
                 <div>
-                    <label></label>
+                    <label htmlFor="year"></label>
                     <input
                         type="number"
                         value={book.release_year}
@@ -131,7 +133,7 @@ function BookEditForm(){
                 </div>
 
                 <div>
-                    <label></label>
+                    <label htmlFor="pages"></label>
                     <input
                         id="pages"
                         type="number"
@@ -153,7 +155,7 @@ function BookEditForm(){
 
                 <div>
                     <button type="submit">Submit</button>
-                    <Link>
+                    <Link to={`/books/${id}`}>
                         <button className="">Cancel</button>
                     </Link>
                 </div>

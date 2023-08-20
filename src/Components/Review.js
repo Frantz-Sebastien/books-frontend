@@ -28,9 +28,9 @@ function Review({ review, handleDelete, handleSubmit }) {
 
       <div className="d-flex justify-content-between align-items-center">
         <div className="user d-flex flex-row align-items-center">
-          <span><small className="font-weight-bold text-primary">{review.reviewer}</small> <small className="font-weight-bold">{review.content}</small></span>  
+          {/* <span><small className="font-weight-bold text-primary">{review.reviewer}</small> <small className="font-weight-bold">{review.content}</small></span>   */}
         </div>
-      <small style={{color: 'green', fontSize: '18px', fontWeight:'bold'}}>{review.title}</small>
+      <small style={{color: 'green', fontSize: '18px', fontWeight:'bold'}}>{review.rating}</small>
       </div>
 
 

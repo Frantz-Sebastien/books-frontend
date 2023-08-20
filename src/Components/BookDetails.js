@@ -36,28 +36,28 @@ function BookDetails(){
 
     return (
         <>
-        <h3>{book.book}</h3>
-        <h2><small>by {book.author}</small></h2>
+            <h3>{book.book}</h3>
+            <h2><small>by {book.author}</small></h2>
 
-        <article>
-            <img src={book.image} alt ={`${book.book} book cover`} />
-        </article>
-        <div>
+            <article>
+                <img src={book.image} alt ={`${book.book} book cover`} />
+            </article>
             <div>
-                <Link to={`/books`}>
-                    <button>Back</button>
-                </Link>
+                <div>
+                    <Link to={`/books`}>
+                        <button>Back</button>
+                    </Link>
+                </div>
+                <div>
+                    <Link to={`/books/${id}/edit`}>
+                        <button>Edit</button>
+                    </Link>
+                </div>
+                <div>
+                    <button onClick={handleDelete}>Delete</button>
+                </div>
             </div>
-            <div>
-                <Link to={`/books/${id}/edit`}>
-                    <button>Edit</button>
-                </Link>
-            </div>
-            <div>
-                <button onClick={handleDelete}>Delete</button>
-            </div>
-        </div>
-        <Reviews />
+            <Reviews />
         </>
     )
 }
