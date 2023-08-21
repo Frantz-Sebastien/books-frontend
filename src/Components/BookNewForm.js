@@ -24,7 +24,7 @@ function BookNewForm(){
         genre: "",
         release_year: 0,
         has_read: false,
-        pages: 0,
+        price: 0,
         favorite: false
     });
 
@@ -46,11 +46,11 @@ function BookNewForm(){
     }
 
     return(
-        <div>
+        <div className="New form-group row text-box">
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="inputBook3">Book</label>
-                    <div>
+                <div className="form-group row">
+                    <label htmlFor="inputBook3" className="col-sm-2 col-form-label">Book</label>
+                    <div className="col-sm-10">
                         <input
                             type="text"
                             className=""
@@ -63,9 +63,9 @@ function BookNewForm(){
                     </div>
                 </div>
 
-                <div>
-                    <label>Author</label>
-                    <div>
+                <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Author</label>
+                    <div className="col-sm-10">
                         <input
                             type="text"
                             className=""
@@ -78,9 +78,9 @@ function BookNewForm(){
                     </div>
                 </div>
 
-                <div>
-                    <label>Book Cover</label>
-                    <div>
+                <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Book Cover</label>
+                    <div className="col-sm-10">
                         <input
                             type="text"
                             className=""
@@ -92,9 +92,9 @@ function BookNewForm(){
                     </div>
                 </div>
 
-                <div>
-                    <label>Genre</label>
-                    <div>
+                <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Genre</label>
+                    <div className="col-sm-10">
                         <input
                             type="text"
                             className=""
@@ -106,9 +106,9 @@ function BookNewForm(){
                     </div>
                 </div>
 
-                <div>
-                    <label>Release Year</label>
-                    <div>
+                <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Release Year</label>
+                    <div className="col-sm-10">
                         <input 
                             type="number"
                             className=""
@@ -120,9 +120,9 @@ function BookNewForm(){
                     </div>
                 </div>
 
-                <div>
-                    <label>Read</label>
-                    <div>
+                <div className="form-group row">
+                    <label >Read</label>
+                    <div className="col-sm-10">
                         <input
                             type="checkbox" 
                             className=""
@@ -133,23 +133,23 @@ function BookNewForm(){
                     </div>
                 </div>
 
-                <div>
-                    <label>Pages</label>
-                    <div>
+                <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Price</label>
+                    <div className="col-sm-10">
                         <input
                             type="number" 
                             className=""
                             id=""
-                            placeholder="How many Pages?"
+                            placeholder="What's the Price?"
                             onChange={handleTextChange}
-                            value={book.pages}
+                            value={book.price}
                             />
                     </div>
                 </div>
 
-                <div>
+                <div className="form-group row">
                     <label>Favorite</label>
-                    <div>
+                    <div className="col-sm-10">
                         <input
                             type="checkbox" 
                             className=""
@@ -157,6 +157,12 @@ function BookNewForm(){
                             onChange={handleFavoriteChange}
                             value={book.favorite}
                             />
+                    </div>
+                </div>
+
+                <div className="form-group row">
+                    <div className="col-sm-10">
+                        <button type="submit">Submit</button>
                     </div>
                 </div>
             </form>

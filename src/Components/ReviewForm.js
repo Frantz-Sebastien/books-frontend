@@ -38,7 +38,7 @@ function ReviewForm(props) {
 
   return (
     
-    <form className="form-inline addReview" action="/action_page.php" onSubmit={handleSubmit}>
+    <form className="form-inline addreview" action="/action_page.php" onSubmit={handleSubmit}>
     {/* <div className="form-inline form-group">
       {props.children} */}
 

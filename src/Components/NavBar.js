@@ -12,7 +12,7 @@ export default function NavBar() {
           </h1>
           <div>
             <Link to="/books/new" className="navbar-button">
-              New City
+              New Book
             </Link>
           </div>
         </div>

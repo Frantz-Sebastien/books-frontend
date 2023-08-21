@@ -19,7 +19,7 @@ function Books() {
     return(
         <div>
             <h1>Total Books: {books.length}</h1>
-            <tbody>
+            <tbody className="grid-container">
                 {books.map((book)=>{
                     return <Book key={book.id} book={book} />
                 })}

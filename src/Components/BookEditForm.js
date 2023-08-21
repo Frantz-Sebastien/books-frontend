@@ -15,7 +15,7 @@ function BookEditForm(){
         genre: "",
         release_year: 0,
         has_read: false,
-        pages: 0,
+        price: 0,
         favorite: false,
     })
 
@@ -58,14 +58,14 @@ function BookEditForm(){
     };
 
     return (
-        <div>
+        <div className="text-box">
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form-group">
                     <label htmlFor="book"></label>
                     <input
                         type="text"
                         value={book.book}
-                        className=""
+                        className="form-control shorter-input"
                         id="book"
                         onChange={handleTextChange}
                         placeholder="Book Title?"
@@ -73,12 +73,12 @@ function BookEditForm(){
                         />
                 </div>
 
-                <div>
+                <div className="form-group">
                     <label htmlFor="author"></label>
                     <input
                         type="text"
                         value={book.author}
-                        className=""
+                        className="form-control"
                         id="author"
                         onChange={handleTextChange}
                         placeholder="Author's Name"
@@ -86,43 +86,43 @@ function BookEditForm(){
                         />
                 </div>
 
-                <div>
+                <div className="form-group">
                     <label htmlFor="image"></label>
                     <input
                         type="text"
                         value={book.image}
-                        className=""
+                        className="form-control"
                         id="book-cover"
                         onChange={handleTextChange}
                         placeholder="Add a Book Cover Image"
                         />
                 </div>
 
-                <div>
+                <div className="form-group">
                     <label htmlFor="genre"></label>
                     <input
                         type="text"
                         value={book.genre}
-                        className=""
+                        className="form-control"
                         id="genre"
                         onChange={handleTextChange}
                         placeholder="Genre?"
                         />
                 </div>
 
-                <div>
+                <div className="form-group">
                     <label htmlFor="year"></label>
                     <input
                         type="number"
                         value={book.release_year}
-                        className=""
+                        className="form-control"
                         id="release-year"
                         onChange={handleTextChange}
                         placeholder="Release Year?" 
                         />
                 </div>
 
-                <div>
+                <div className="form-check">
                     <input
                         id="has_read"
                         type="checkbox"
@@ -133,17 +133,17 @@ function BookEditForm(){
                 </div>
 
                 <div>
-                    <label htmlFor="pages"></label>
+                    <label htmlFor="price"></label>
                     <input
-                        id="pages"
+                        id="price"
                         type="number"
-                        value={book.pages}
+                        value={book.price}
                         onChange={handleTextChange}
-                        placeholder="How many Pages?" 
+                        placeholder="What's the price?" 
                         />
                 </div>
 
-                <div>
+                <div className="form-check">
                     <label>Favorite?</label>
                     <input
                         id="favorite"
@@ -153,10 +153,10 @@ function BookEditForm(){
                         />
                 </div>
 
-                <div>
-                    <button type="submit">Submit</button>
+                <div className="button-container">
+                    <button type="submit" className="btn btn-primary">Submit</button>
                     <Link to={`/books/${id}`}>
-                        <button className="">Cancel</button>
+                        <button className="btn btn-outline-secondary">Cancel</button>
                     </Link>
                 </div>
 

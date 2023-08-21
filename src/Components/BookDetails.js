@@ -40,21 +40,21 @@ function BookDetails(){
             <h2><small>by {book.author}</small></h2>
 
             <article>
-                <img src={book.image} alt ={`${book.book} book cover`} />
+                <img className="cityimage" src={book.image} alt ={`${book.book} book cover`} />
             </article>
-            <div>
+            <div className="showNavigation">
                 <div>
                     <Link to={`/books`}>
-                        <button>Back</button>
+                        <button className="btn btn-success">Back</button>
                     </Link>
                 </div>
                 <div>
                     <Link to={`/books/${id}/edit`}>
-                        <button>Edit</button>
+                        <button className="btn btn-warning">Edit</button>
                     </Link>
                 </div>
                 <div>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
                 </div>
             </div>
             <Reviews />

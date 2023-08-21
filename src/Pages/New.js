@@ -1,4 +1,4 @@
-import BoookNewForm from "../Components/BookNewForm.js";
+import BoookNewForm from "../Components/BookNewForm";
 
 function New() {
   return (

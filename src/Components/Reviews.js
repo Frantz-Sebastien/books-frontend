@@ -63,7 +63,7 @@ function Reviews() {
       <ReviewForm handleSubmit={handleAdd}>
       </ReviewForm>
 
-      <h2 className="h2-Reviews">Reviews ({reviews ? reviews.length : 0})</h2>
+      <h2 className="h2-reviews">Reviews ({reviews ? reviews.length : 0})</h2>
       {reviews && reviews.map((review) => (
         <Review
           key={review.id}
