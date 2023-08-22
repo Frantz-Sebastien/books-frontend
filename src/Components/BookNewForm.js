@@ -41,7 +41,7 @@ function BookNewForm(){
     }
 
     const handleSubmit = (event) =>{
-        event.prevenDefault()
+        event.preventDefault()
         addBook(book)
     }
 
@@ -84,7 +84,7 @@ function BookNewForm(){
                         <input
                             type="text"
                             className=""
-                            id="book-cover"
+                            id="image"
                             value={book.image} 
                             placeholder="Book Cover URL"
                             onChange={handleTextChange}
@@ -139,7 +139,7 @@ function BookNewForm(){
                         <input
                             type="number" 
                             className=""
-                            id=""
+                            id="price"
                             placeholder="What's the Price?"
                             onChange={handleTextChange}
                             value={book.price}

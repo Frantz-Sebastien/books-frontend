@@ -92,7 +92,7 @@ function BookEditForm(){
                         type="text"
                         value={book.image}
                         className="form-control"
-                        id="book-cover"
+                        id="image"
                         onChange={handleTextChange}
                         placeholder="Add a Book Cover Image"
                         />
@@ -116,7 +116,7 @@ function BookEditForm(){
                         type="number"
                         value={book.release_year}
                         className="form-control"
-                        id="release-year"
+                        id="release_year"
                         onChange={handleTextChange}
                         placeholder="Release Year?" 
                         />
