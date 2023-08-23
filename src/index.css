@@ -11,3 +11,151 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+img {
+  width: 50%; /* Adjust this value as needed */
+  height: 70%; /* Adjust this value as needed */
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust grid column sizing as needed */
+  gap: 40px; /* Adjust gap between grid items as needed */
+}
+
+.card-title {
+  display: inline-block;
+  margin-right: 10px; /* Adjust the margin as needed for spacing */
+}
+
+.button-container {
+  display: flex; /* Display the buttons in a row */
+  gap: 10px; /* Add a gap of 10px between buttons */
+}
+
+.text-box {
+  width: 70%; /* You can adjust the width value as needed */
+}
+
+.visited-text {
+  margin-left: 45px; /* Add margin to the left of the span */
+}
+
+
+
+
+/* I have copied this part below */
+
+body {
+  background-color: #f7f6f6;
+  margin: 20px
+}
+
+.card {
+  
+  border: none;
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  border-radius: 4px;
+}
+
+
+.dots{
+
+  height: 4px;
+  width: 4px;
+  margin-bottom: 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.form-check-input{
+  margin-top: 6px;
+  margin-left: -24px !important;
+  cursor: pointer;
+}
+
+
+.form-check-input:focus{
+  box-shadow: none;
+}
+
+
+.remove-edit{
+
+  margin-left: 12px;
+}
+
+.remove-edit small{
+  color: #b7b4b4;
+}
+
+.remove-edit small:hover{
+  color: rgb(165, 82, 165);
+  cursor: pointer;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+}
+
+.showNavigation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px; /* Add margin for spacing */
+  gap: 1px;
+  margin-bottom: 50px;
+  
+}
+
+.addcomment{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.h2-reviews{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* NavBar.css */
+
+/* Style for the logo */
+/* .navbar-logo {
+  color: #333;
+  text-decoration: none;
+  font-size: 24px;
+} */
+
+.navbar-link {
+  color: #007bff;
+  text-decoration: none;
+ 
+}
+
+.navbar-link:hover {
+  color: #0056b3;
+}
+
+/* Style for the button */
+.navbar-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #0056b3;
+}
+

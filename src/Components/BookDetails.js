@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect} from "react"
 import { Link, useParams, useNavigate } from "react-router-dom";
-import Comments from "./Comments";
+import Reviews from "./Reviews";
 const API = process.env.REACT_APP_API_URL;
 
 function BookDetails(){
@@ -36,28 +36,28 @@ function BookDetails(){
 
     return (
         <>
-        <h3>{book.book}</h3>
-        <h2><small>by {book.author}</small></h2>
+            <h3>{book.book}</h3>
+            <h2><small>by {book.author}</small></h2>
 
-        <article>
-            <img src={book.image} alt ={`${book.book} book cover`} />
-        </article>
-        <div>
-            <div>
-                <Link to={`/books`}>
-                    <button>Back</button>
-                </Link>
+            <article>
+                <img className="cityimage" src={book.image} alt ={`${book.book} book cover`} />
+            </article>
+            <div className="showNavigation">
+                <div>
+                    <Link to={`/books`}>
+                        <button className="btn btn-success">Back</button>
+                    </Link>
+                </div>
+                <div>
+                    <Link to={`/books/${id}/edit`}>
+                        <button className="btn btn-warning">Edit</button>
+                    </Link>
+                </div>
+                <div>
+                    <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
+                </div>
             </div>
-            <div>
-                <Link to={`/books/${id}/edit`}>
-                    <button>Edit</button>
-                </Link>
-            </div>
-            <div>
-                <button onClick={handleDelete}>Delete</button>
-            </div>
-        </div>
-        <Comments />
+            <Reviews />
         </>
     )
 }
