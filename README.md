@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Book Tracking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Book Tracking App, your digital library management system that not only helps you keep track of books you've read, want to read, or are currently reading, but also offers a treasure trove of literary insights, reviews, and recommendations. This guide will walk you through all the features of both the frontend and backend, giving you the tools you need to make the most of your reading journey.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+The Book Tracking App is the ultimate solution for bibliophiles, casual readers, and everyone in between. Designed with the modern reader in mind, this application serves as your personal bookshelf in the cloud. It allows you to catalog your reading history, leave book review, and discover new books in an intuitive and visually appealing interface.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Browse books.
+- View book information.
+- View book prices 
+- Leave a comment on books.
+- Update book details
+- Add new books
+- Rate the book
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Repositories
 
-### `npm test`
+- **Backend**: [Book Tracking App Backend](https://github.com/Frantz-Sebastien/books-frontend)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: [Book Tracking App Frontend](https://github.com/Frantz-Sebastien/books-backend)
 
-### `npm run build`
+## Setting Up the Development Environment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git clone [https://github.com/Frantz-Sebastien/books-frontend]
 
-### `npm run eject`
+# Packages to install for Cities Frontend app
+npm install react-router-dom
+npm install axios
+npm install bootstrap
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+git clone [https://github.com/Frantz-Sebastien/books-backend]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Packages to install for Cities backend  app
+npm install express 
+npm install dotenv 
+npm install cors 
+npm install pg-promise
 
-## Learn More
+# Resetting and/or updating the database
+psql -U postgres -f db/schema.sql
+psql -U postgres -f db/seed.sql
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Development Commands
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once you're set up, here are some commands you can use:
 
-### Code Splitting
+# Running the App : 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+In the project directory, use the following command to run the app in development mode:
 
-### Analyzing the Bundle Size
+```npm start```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Visit http://localhost:3000 in your browser to view the app. The page will reload automatically when you make changes, and you'll be able to see lint errors in the console.
 
-### Making a Progressive Web App
+# Deployment
+[Provide details on how to deploy your app. Any platforms you recommend? Steps?]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Contributor
+[Frantz-Sebastien Mathias(https://github.com/Frantz-Sebastien)], 
 
-### Advanced Configuration
+# Feedback
+Feel free to file an issue or send pull requests for improvements. Your feedback is much appreciated!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
