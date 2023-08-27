@@ -9,15 +9,17 @@ const API = process.env.REACT_APP_API_URL;
 function Reviews() {
   const [reviews, setReviews] = useState(null);
   let { id } = useParams();
-
+  
   const handleAdd = (newReview) => {
+    newReview.rating = String(newReview.rating)
     axios
-      .post(`${API}/books/${id}/reviews`, newReview)
-      .then((response) => {
-        setReviews([response.data, ...reviews]);
-      })
-      .catch((c) => console.warn("catch", c));
+    .post(`${API}/books/${id}/reviews`, newReview)
+    .then((response) => {
+      setReviews([response.data, ...reviews]);
+    })
+    .catch((c) => console.warn("catch", c));
   };
+  
 
   const handleDelete = (reviewId) => {
     axios
@@ -34,6 +36,7 @@ function Reviews() {
   };
 
   const handleEdit = (updatedReview) => {
+    updatedReview.rating = String(updatedReview.rating)
     axios
       .put(`${API}/books/${id}/reviews/${updatedReview.id}`, updatedReview)
       .then((response) => {
@@ -60,8 +63,10 @@ function Reviews() {
   return (
     <section className="Reviews">
         <h3>Add a New Review</h3>
-      <ReviewForm handleSubmit={handleAdd}>
-      </ReviewForm>
+        <div className="center-content">
+          <ReviewForm handleSubmit={handleAdd}>
+          </ReviewForm>
+        </div>
 
       <h2 className="h2-reviews">Reviews ({reviews ? reviews.length : 0})</h2>
       {reviews && reviews.map((review) => (

@@ -15,7 +15,7 @@ function Book({ book }){
                         )}
                     </p>
                     <p className="card-title">{book.favorite ? (
-                        <span>Loved!</span>):(
+                        <span>💟</span>):(
                             null
                         )}
                     </p>

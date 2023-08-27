@@ -37,10 +37,10 @@ function BookDetails(){
     return (
         <>
             <h3>{book.book}</h3>
-            <h2><small>by {book.author}</small></h2>
+            <h4><small>by {book.author}</small></h4>
 
             <article>
-                <img className="cityimage" src={book.image} alt ={`${book.book} book cover`} />
+                <img className="bookimage" src={book.image} alt ={`${book.book} book cover`} />
             </article>
             <div className="showNavigation">
                 <div>

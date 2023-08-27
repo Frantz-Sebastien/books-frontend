@@ -46,12 +46,13 @@ function BookNewForm(){
     }
 
     return(
-        <div className="New form-group row text-box">
+        <div className="New form-group row text-box new-book-form">
             <form onSubmit={handleSubmit}>
                 <div className="form-group row">
                     <label htmlFor="inputBook3" className="col-sm-2 col-form-label">Book</label>
                     <div className="col-sm-10">
                         <input
+                            
                             type="text"
                             className=""
                             id="book"
@@ -86,7 +87,7 @@ function BookNewForm(){
                             className=""
                             id="image"
                             value={book.image} 
-                            placeholder="Book Cover URL"
+                            placeholder="Book Cover image URL"
                             onChange={handleTextChange}
                             />
                     </div>
@@ -121,15 +122,20 @@ function BookNewForm(){
                 </div>
 
                 <div className="form-group row">
-                    <label >Read</label>
+                    <div className="col-sm-2">Read?</div>
                     <div className="col-sm-10">
-                        <input
+                    <div className="form-check">
+                        <input 
                             type="checkbox" 
-                            className=""
+                            className="form-check-input" 
                             id="has_read"
                             onChange={handleReadChange}
                             value={book.has_read}
                             />
+                        <label className="form-check-label" for="gridCheck1">
+                        Yes!
+                        </label>
+                    </div>
                     </div>
                 </div>
 
@@ -148,21 +154,26 @@ function BookNewForm(){
                 </div>
 
                 <div className="form-group row">
-                    <label>Favorite</label>
+                    <div className="col-sm-2">Favorite?</div>
                     <div className="col-sm-10">
-                        <input
+                    <div className="form-check">
+                        <input 
                             type="checkbox" 
-                            className=""
+                            className="form-check-input" 
                             id="favorite"
                             onChange={handleFavoriteChange}
-                            value={book.favorite}
+                            value={book.favorite} 
                             />
+                        <label className="form-check-label" for="gridCheck1">
+                        Yes!
+                        </label>
+                    </div>
                     </div>
                 </div>
 
                 <div className="form-group row">
                     <div className="col-sm-10">
-                        <button type="submit">Submit</button>
+                        <button className="btn btn-primary mb-2" type="submit">Submit</button>
                     </div>
                 </div>
             </form>

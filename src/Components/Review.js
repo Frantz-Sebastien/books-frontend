@@ -34,21 +34,21 @@ function Review({ review, handleDelete, handleSubmit }) {
         
          ):(
 
-<div className="">
+<div className="row  d-flex justify-content-center">
 
-  <div className="">
-    <div className="">
+  <div className="col-md-8">
+    <div className="card p-3">
 
-      <div className="">
-        <div className="">
-          <span><small className="">{review.reviewer}</small> <small className="">{review.content}</small></span>  
+      <div className="d-flex justify-content-between align-items-center">
+        <div className="user d-flex flex-row align-items-center">
+          <span><small className="font-weight-bold text-primary">{review.reviewer}</small> <small className="">{review.content}</small></span>  
         </div>
       <small style={{color: 'green', fontSize: '18px', fontWeight:'bold'}}>{countingStars(review.rating)}</small>
       </div>
 
 
-      <div className="">
-        <div className="">
+      <div className="action d-flex justify-content-between mt-2 align-items-center">
+        <div className="remove-edit">
             <small onClick={() => handleDelete(review.id)}> Remove</small>
             <span className="dots"></span>
             <small onClick={toggleView}>Edit</small>
