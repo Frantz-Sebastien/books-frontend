@@ -8,9 +8,22 @@ function Review({ review, handleDelete, handleSubmit }) {
     toggleEditForm(!viewEditForm);
   };
 
+  const countingStars = (rating) =>{
+    let stars = []
+    for (let i= 1; i<=5; i++){
+      if(i<=rating){
+        stars.push(<span key={i} className='ratingStar'>&#9733;</span>)
+      } else {
+        stars.push(<span key={i} className='ratingStar'>&#9734;</span>)
+      }
+    }
+    return stars
+  }
+
   return (
 
-<div className="container mt-5">
+
+<div className="">
 
 {viewEditForm ? (
          <ReviewForm
@@ -21,21 +34,21 @@ function Review({ review, handleDelete, handleSubmit }) {
         
          ):(
 
-<div className="row  d-flex justify-content-center">
+<div className="">
 
-  <div className="col-md-8">
-    <div className="card p-3">
+  <div className="">
+    <div className="">
 
-      <div className="d-flex justify-content-between align-items-center">
-        <div className="user d-flex flex-row align-items-center">
-          <span><small className="font-weight-bold text-primary">{review.reviewer}</small> <small className="font-weight-bold">{review.content}</small></span>  
+      <div className="">
+        <div className="">
+          <span><small className="">{review.reviewer}</small> <small className="">{review.content}</small></span>  
         </div>
-      <small style={{color: 'green', fontSize: '18px', fontWeight:'bold'}}>{review.rating}</small>
+      <small style={{color: 'green', fontSize: '18px', fontWeight:'bold'}}>{countingStars(review.rating)}</small>
       </div>
 
 
-      <div className="action d-flex justify-content-between mt-2 align-items-center">
-        <div className="remove-edit">
+      <div className="">
+        <div className="">
             <small onClick={() => handleDelete(review.id)}> Remove</small>
             <span className="dots"></span>
             <small onClick={toggleView}>Edit</small>
