@@ -13,9 +13,9 @@ function BookEditForm(){
         author: "",
         image: "",
         genre: "",
-        release_year: null,
+        release_year: 0,
         has_read: false,
-        pages: null,
+        price: 0,
         favorite: false,
     })
 
@@ -23,7 +23,9 @@ function BookEditForm(){
         axios
             .put(`${API}/books/${id}`, updatedBook)
             .then(
-                () => {navigate(`/books/${id}`)},
+                () => {
+                    navigate(`/books/${id}`)
+                },
                 (error) => console.error(error)
             )
             .catch((error) => {
@@ -56,108 +58,138 @@ function BookEditForm(){
     };
 
     return (
-        <div>
-            <form>
-                <div>
-                    <label></label>
-                    <input
-                        type="text"
-                        value={book.book}
-                        className=""
-                        id="book"
-                        onChange={handleTextChange}
-                        placeholder="Book Title?"
-                        required
-                        />
+
+        <div className="New form-group row text-box new-book-form">
+            <form onSubmit={handleSubmit}>
+
+                <div className="form-group row">
+                    <label htmlFor="book" className="col-sm-2 col-form-label">Book</label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            value={book.book}
+                            className="form-control shorter-input"
+                            id="book"
+                            onChange={handleTextChange}
+                            placeholder="Book Title?"
+                            required
+                            />
+                    </div>
                 </div>
 
-                <div>
-                    <label></label>
-                    <input
-                        type="text"
-                        value={book.author}
-                        className=""
-                        id="author"
-                        onChange={handleTextChange}
-                        placeholder="Author's Name"
-                        required
-                        />
+                <div className="form-group row">
+                    <label htmlFor="author" className="col-sm-2 col-form-label">Author</label>
+                    <div className="col-sm-10">                        
+                        <input
+                            type="text"
+                            value={book.author}
+                            className="form-control shorter-input"
+                            id="author"
+                            onChange={handleTextChange}
+                            placeholder="Author's Name"
+                            required
+                            />
+                    </div>
                 </div>
 
-                <div>
-                    <label></label>
-                    <input
-                        type="text"
-                        value={book.image}
-                        className=""
-                        id="cover-image"
-                        onChange={handleTextChange}
-                        placeholder="Add a Book Cover Image"
-                        />
+                <div className="form-group row">
+                    <label htmlFor="image" className="col-sm-2 col-form-label">Book Cover</label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            value={book.image}
+                            className="form-control shorter-input"
+                            id="image"
+                            onChange={handleTextChange}
+                            placeholder="Add a Book Cover Image"
+                            />
+                    </div>
                 </div>
 
-                <div>
-                    <label></label>
-                    <input
-                        type="text"
-                        value={book.genre}
-                        className=""
-                        id="genre"
-                        onChange={handleTextChange}
-                        placeholder="Genre?"
-                        />
+                <div className="form-group row">
+                    <label htmlFor="genre" className="col-sm-2 col-form-label">Genre</label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            value={book.genre}
+                            className="form-control"
+                            id="genre"
+                            onChange={handleTextChange}
+                            placeholder="Genre?"
+                            />
+                    </div>
                 </div>
 
-                <div>
-                    <label></label>
-                    <input
-                        type="number"
-                        value={book.release_year}
-                        className=""
-                        id="release-year"
-                        onChange={handleTextChange}
-                        placeholder="Release Year?" 
-                        />
+                <div className="form-group row">
+                    <label htmlFor="year" className="col-sm-2 col-form-label">Release Year</label>
+                    <div className="col-sm-10">
+                        <input
+                            type="number"
+                            value={book.release_year}
+                            className="form-control"
+                            id="release_year"
+                            onChange={handleTextChange}
+                            placeholder="Release Year?" 
+                            />
+                    </div>
                 </div>
 
-                <div>
-                    <input
-                        id="has_read"
-                        type="checkbox"
-                        onChange={handleReadChange}
-                        checked={book.has_read} 
-                        />
-                    <label>Read</label>
+                <div className="form-group row">
+                    <label htmlFor="price" className="col-sm-2 col-form-label">Price</label>
+                    <div className="col-sm-10">
+                        <input
+                            type="number"
+                            value={book.price}
+                            className="form-control"
+                            id="price"
+                            onChange={handleTextChange}
+                            placeholder="What's the price?" 
+                            />
+                    </div>
                 </div>
 
-                <div>
-                    <label></label>
-                    <input
-                        id="pages"
-                        type="number"
-                        value={book.pages}
-                        onChange={handleTextChange}
-                        placeholder="How many Pages?" 
-                        />
+                <div className="form-group row">
+                     <div className="col-sm-2">Read?</div>
+                     <div className="col-sm-10">
+                     <div className="form-check">
+                         <input 
+                             type="checkbox" 
+                             className="form-check-input" 
+                             id="has_read"
+                             onChange={handleReadChange}
+                             checked={book.has_read}
+                             />
+                         <label className="form-check-label" for="gridCheck1">
+                         Yes!
+                         </label>
+                     </div>
+                     </div>
+                 </div>
+
+                <div className="form-group row">
+                    <div className="col-sm-2">Love?</div>
+                    <div className="col-sm-10">
+                    <div className="form-check">
+                        <input
+                            id="favorite"
+                            type="checkbox"
+                            className="form-check-input"
+                            onChange={handleFavoriteChange} 
+                            checked={book.favorite}
+                            />
+                        <label className="form-check-label" for="gridCheck1">
+                        Yes!
+                        </label>
+                    </div>
+                    </div>
                 </div>
 
-                <div>
-                    <label>Favorite?</label>
-                    <input
-                        id="favorite"
-                        type="checkbox"
-                        onChange={handleFavoriteChange} 
-                        checked={book.favorite}
-                        />
-                </div>
-
-                <div>
-                    <button type="submit">Submit</button>
-                    <Link>
-                        <button className="">Cancel</button>
+                <div className="button-container">
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <Link to={`/books/${id}`}>
+                        <button className="btn btn-outline-secondary">Cancel</button>
                     </Link>
                 </div>
-
 
             </form>
         </div>
